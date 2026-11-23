@@ -1,0 +1,104 @@
+.conference-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.conference-container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.search-box {
+  margin-bottom: 30px;
+}
+
+.search-box input {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  display: block;
+  margin: 0 auto;
+}
+
+.no-conferences {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 16px;
+}
+
+.conferences-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.conference-card {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.conference-card h2 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 18px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.card-info p {
+  margin: 8px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.conference-card button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: opacity 0.3s;
+}
+
+.conference-card button:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.conference-card button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn-green {
+  background-color: #28a745;
+}
+
+.btn-orange {
+  background-color: #fd7e14;
+}
+
+.btn-red {
+  background-color: #dc3545;
+}

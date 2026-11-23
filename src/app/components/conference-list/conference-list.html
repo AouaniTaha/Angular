@@ -1,0 +1,35 @@
+<div class="conference-container">
+  <h1>Liste des conférences à venir</h1>
+  <p class="subtitle">Cliquez sur une conférence pour afficher ses détails.</p>
+  
+  <div class="search-box">
+    <input 
+      type="text" 
+      [value]="searchTerm()" 
+      (input)="onSearchChange($event)" 
+      placeholder="Taper le titre de la conférence"
+    />
+  </div>
+
+  <div *ngIf="conferences().length === 0" class="no-conferences">
+    <p>Aucune conférence trouvée.</p>
+  </div>
+
+  <div class="conferences-grid">
+    <div *ngFor="let conference of conferences()" class="conference-card">
+      <h2>{{ conference.title | uppercase }}</h2>
+      <div class="card-info">
+        <p><strong>Date :</strong> {{ conference.date | date:'dd/MM/yyyy' }}</p>
+        <p><strong>Lieu :</strong> {{ conference.place }}</p>
+        <p><strong>Places restantes :</strong> {{ conference.maxParticipants - conference.nbParticipants }}</p>
+      </div>
+      <button 
+        [ngClass]="getButtonClass(conference)"
+        (click)="register(conference.id)"
+        [disabled]="isConferenceFull(conference)"
+      >
+        S'inscrire
+      </button>
+    </div>
+  </div>
+</div>
